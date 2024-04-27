@@ -15,6 +15,7 @@ function addBook() {
         books.push(book);
         showBooks();
         clearInputs();
+        
     } else {
         alert('Please fill in all fields correctly.');
     }
@@ -28,6 +29,8 @@ function showBooks() {
         <p><strong>Author Name:</strong> ${book.authorName}</p>
         <p><strong>Book Description:</strong> ${book.bookDescription}</p>
         <p><strong>No. of Pages:</strong> ${book.pagesNumber}</p>
+        <button onclick="editbook(${index})">Edit</button>
+        <button onclick="deletebook(${index})">Delete</button>
       </div>
     `).join(''); // Join the array elements into a single string
     document.getElementById('books').innerHTML = booksDiv;
